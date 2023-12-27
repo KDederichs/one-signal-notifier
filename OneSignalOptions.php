@@ -88,8 +88,16 @@ final class OneSignalOptions implements MessageOptionsInterface
         return $this;
     }
 
+    public function isExternal(bool $flag = true): static
+    {
+        $this->options['is_external'] = $flag;
+
+        return $this;
+    }
+
     /**
      * @return $this
+     * @deprecated This is deprecated, please switch to OneSignalOptions::isExternal())
      */
     public function externalId(string $externalId): self
     {
